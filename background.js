@@ -6,7 +6,6 @@ chrome.runtime.onInstalled.addListener(() => {
   })
   
   chrome.runtime.onMessage.addListener((message, sender, reply) => {
-    console.log('message')
     if (message.type === 'ratio') {
       chrome.contextMenus.update(
         'ratioPreview',

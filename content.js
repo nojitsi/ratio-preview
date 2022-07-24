@@ -3,7 +3,6 @@ const getImageRatio = (image) => {
 }
 
 const updateImageRatio = (event) => {
-  console.log('over')
   chrome.runtime.sendMessage({type: 'ratio', options: { 
     type: 'basic', 
     message: getImageRatio(event.target),
@@ -11,6 +10,5 @@ const updateImageRatio = (event) => {
 }
 
 for (const image of document.getElementsByTagName('img')) {
-  console.log(image)
   image.onmouseover = updateImageRatio
 }
